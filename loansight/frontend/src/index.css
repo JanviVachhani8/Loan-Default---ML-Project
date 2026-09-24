@@ -1,0 +1,149 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --bg-canvas: #F7F4EC;
+    --bg-card: #FFFFFF;
+    --border-color: #E7E1D3;
+    --color-ink: #101828;
+    --color-ink-muted: #5B6472;
+    --color-cobalt: #2340F5;
+    --color-cobalt-hover: #1A31C4;
+    --color-lemon: #F4E04D;
+    --color-peach: #FFD9C2;
+    --color-mint: #BFEBD7;
+    --color-sky: #CFE0FF;
+  }
+
+  body {
+    background-color: #F7F4EC;
+    color: #101828;
+    font-family: 'Manrope', sans-serif;
+    /* Subtle paper grain texture overlay */
+    background-image: radial-gradient(#E7E1D3 0.75px, transparent 0.75px);
+    background-size: 24px 24px;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Bricolage Grotesque', sans-serif;
+    letter-spacing: -0.02em;
+  }
+}
+
+/* Custom Editorial Utilities */
+.glass-panel {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid #E7E1D3;
+}
+
+.hard-shadow {
+  box-shadow: 4px 4px 0px #101828;
+}
+
+.hard-shadow-sm {
+  box-shadow: 2px 2px 0px #101828;
+}
+
+.hard-shadow-cobalt {
+  box-shadow: 4px 4px 0px #1A31C4;
+}
+
+.marker-highlight-lemon {
+  background-color: #F4E04D;
+  padding: 0 0.3em;
+  border-radius: 4px;
+  display: inline-block;
+  transform: rotate(-1deg);
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
+}
+
+.marker-highlight-peach {
+  background-color: #FFD9C2;
+  padding: 0 0.3em;
+  border-radius: 4px;
+  display: inline-block;
+  transform: rotate(1deg);
+}
+
+.marker-highlight-mint {
+  background-color: #BFEBD7;
+  padding: 0 0.3em;
+  border-radius: 4px;
+  display: inline-block;
+  transform: rotate(-0.5deg);
+}
+
+.marker-highlight-sky {
+  background-color: #CFE0FF;
+  padding: 0 0.3em;
+  border-radius: 4px;
+  display: inline-block;
+  transform: rotate(0.8deg);
+}
+
+/* Sticker badge rotated style */
+.sticker-badge {
+  border: 1.5px solid #101828;
+  box-shadow: 2px 2px 0px #101828;
+  font-family: 'JetBrains Mono', monospace;
+}
+
+/* Credit Score Slider Track Gradient */
+.credit-slider::-webkit-slider-runnable-track {
+  background: linear-gradient(90deg, #E5484D 0%, #F59E0B 50%, #16A34A 100%);
+  height: 10px;
+  border-radius: 9999px;
+  border: 1px solid #101828;
+}
+
+.credit-slider::-moz-range-track {
+  background: linear-gradient(90deg, #E5484D 0%, #F59E0B 50%, #16A34A 100%);
+  height: 10px;
+  border-radius: 9999px;
+  border: 1px solid #101828;
+}
+
+/* Marquee Animation */
+@keyframes marquee {
+  0% { transform: translateX(0%); }
+  100% { transform: translateX(-50%); }
+}
+
+.animate-marquee {
+  display: flex;
+  width: max-content;
+  animation: marquee 25s linear infinite;
+}
+
+.animate-marquee:hover {
+  animation-play-state: paused;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-marquee {
+    animation: none;
+  }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #F7F4EC;
+}
+::-webkit-scrollbar-thumb {
+  background: #D5CFC0;
+  border-radius: 9999px;
+  border: 2px solid #F7F4EC;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #101828;
+}
+
